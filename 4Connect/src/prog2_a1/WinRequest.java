@@ -5,6 +5,8 @@ public class WinRequest {
     private int rowInput;
     private int CounterOne =1;
     private int CounterTwo =1;
+    public WinRequest(){
+    };
     
     private void getWinnerInRowsLeft(char[][] field) {
         for (int i = 1; i <=3 ; i++){

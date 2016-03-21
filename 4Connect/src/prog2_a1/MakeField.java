@@ -11,7 +11,7 @@ package prog2_a1;
  */
 public class MakeField {
     public MakeField(){};
-    
+    	
         public void print(char[][] field){
         for (int row = 0; row < 7; ++row) {
         System.out.print("| ");
