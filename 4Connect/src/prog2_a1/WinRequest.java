@@ -5,8 +5,6 @@ public class WinRequest {
     private int rowInput;
     private int CounterOne =1;
     private int CounterTwo =1;
-    public WinRequest(){
-    }
     
     private void getWinnerInRowsLeft(char[][] field) {
         for (int i = 1; i <=3 ; i++){
@@ -30,31 +28,6 @@ public class WinRequest {
     		}
             }
     	}
-    }
-    
-    private char getWinnerInRows(char[][] field){
-        getWinnerInRowsRight(field);
-        getWinnerInRowsLeft(field);
-        if (CounterOne>=4){
-            return field[rowInput][columnInput];
-        }
-        else
-            CounterOne=1;
-        return' ';
-    }
-       
-    private char getWinnerInColumns(char[][] field) {
-        for (int i = 1; i <=3 ; i++){
-            if(rowInput+i < 7){    		
-    		if(field[rowInput][columnInput] == field[rowInput+i][columnInput])
-                    CounterOne++;
-            }
-    	}
-        if(CounterOne>=4)
-            return field[rowInput][columnInput];
-        else
-            CounterOne=1;
-        return ' ';
     }
     
     private void getWinnerinDiagonalsTopLeft(char[][] field){
@@ -105,6 +78,31 @@ public class WinRequest {
         } 	
     }
     
+    private char getWinnerInRows(char[][] field){
+        getWinnerInRowsRight(field);
+        getWinnerInRowsLeft(field);
+        if (CounterOne>=4){
+            return field[rowInput][columnInput];
+        }
+        else
+            CounterOne=1;
+        return' ';
+    }
+       
+    private char getWinnerInColumns(char[][] field) {
+        for (int i = 1; i <=3 ; i++){
+            if(rowInput+i < 7){    		
+    		if(field[rowInput][columnInput] == field[rowInput+i][columnInput])
+                    CounterOne++;
+            }
+    	}
+        if(CounterOne>=4)
+            return field[rowInput][columnInput];
+        else
+            CounterOne=1;
+        return ' ';
+    }
+        
     private char getWinnerInDiagonals(char[][] field) {
     	getWinnerinDiagonalsTopLeft(field);
     	getWinnerinDiagonalsBotRight(field);
@@ -133,6 +131,7 @@ public class WinRequest {
         if (playerWin != ' ') 
             return playerWin;
  
+        //Überprüfe ob leeres Feld vorhanden ist
         for (int i = 0; i < field.length; ++i)
             for (int j = 0; j < field[i].length; ++j)
                 if (field[i][j] == ' ') 
