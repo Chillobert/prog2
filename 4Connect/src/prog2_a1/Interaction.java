@@ -4,26 +4,25 @@ import java.util.Scanner;
 
 public class Interaction {
 	
-    public int readInput(boolean playerTurn, char[][] field){
-        boolean validInput;
+    public int readInput(boolean playerTurn){
+        boolean validInput=false;
         Scanner input = new Scanner(System.in);
         int columnIn=0;
                     
         do{
-            System.out.print("Choose column (1-7) for a token:");
             if(input.hasNextInt()){
                 columnIn = input.nextInt();
                 validInput=true;
             }
             else{
-                validInput=false;
                 System.out.println("please insert valid input.");
+                output('I');
                 input.nextLine();
                 continue;
             }
             if (columnIn < 1 || columnIn > 7) {
+                System.out.print("Column should be from 1 to 7\nChoose column (1-7) for a token:");
                 validInput=false;
-                System.out.println("Column should be from 1 to 7");
                 continue;
             }
 
@@ -31,22 +30,15 @@ public class Interaction {
         return columnIn-1;
     }
     
-    private void winnerOut(char result){
-            switch (result) {
-                case 'D':
-                    System.out.println("It's a draw!");
-                    //winFlag = true;
-                    break;
-                case 'X':
-                    System.out.println("Player 1 wins!");
-                    //winFlag = true;
-                    break;
-                case 'O':
-                    System.out.println("Player 2 wins!");
-                    //winFlag = true;
-                    break;
-                default:
-                    break;
-            }        
+    public void output(char index){
+        switch(index){
+            case '1': System.out.println("Player 1's turn");break;
+            case '2': System.out.println("Player 2's turn");break;
+            case 'D': System.out.println("It's a draw!");break;
+            case 'X': System.out.println("Player 1 wins!");break;
+            case 'O': System.out.println("Player 2 wins!");break;
+            case 'F': System.out.println("This column is filled! Choose another one.");break;
+            case 'I': System.out.print("Choose column (1-7) for a token:");break;
+        }
     }
 }
