@@ -4,7 +4,7 @@ public class Entity{
 	
 	public int id;
 	public int energy;
-	private XY loc;
+	public XY loc;
 	
 //Constructor
 public Entity(int id, int energy, int x, int y){
@@ -23,6 +23,10 @@ public int getEnergy(){
 	return energy;
 }
 	
+public void updateEnergy(int charge){
+	energy = energy + charge;
+}
+
 
 
 }

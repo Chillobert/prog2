@@ -19,4 +19,12 @@ public class XY {
 	public int gety(){
 		return y;
 	}
+	
+	public void setx(int newX){
+		this.x = newX;
+	}
+	
+	public void sety(int newY){
+		this.y = newY;
+	}
 }
