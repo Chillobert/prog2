@@ -1,10 +1,9 @@
 package prog2_a2;
 
 public final class XY {
+	public int x;
+	public int y;
 	
-	private int x;
-	private int y;
-
 //Constructor
 	public XY(int x, int y){
 		this.x = x;
