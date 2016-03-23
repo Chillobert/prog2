@@ -1,6 +1,6 @@
 package prog2_a2;
 
-public class XY {
+public final class XY {
 	
 	private int x;
 	private int y;
