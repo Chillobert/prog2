@@ -19,11 +19,15 @@ public final class XY {
 		return y;
 	}
 	
-	public void setx(int newX){
-		this.x = newX;
+	public int changeX(int newX){
+		
+		return x + newX;
 	}
+
 	
-	public void sety(int newY){
-		this.y = newY;
+	public int changeY(int newY){
+		
+		return y + newY;
 	}
 }
+

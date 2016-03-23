@@ -16,7 +16,7 @@ public class Launcher {
 		System.out.println("ID:" + (fred.getId()));
 		System.out.println("Energy:" + (fred.getEnergy()));
 		System.out.println(fred.loc);
-		fred.loc.setx(2);
+		fred.loc.changeX(2);
 		System.out.println(fred.loc.getx());
 		System.out.println(fred.loc);
 		System.out.println(meixner.energy);
