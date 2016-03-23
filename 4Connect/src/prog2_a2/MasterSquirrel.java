@@ -16,7 +16,8 @@ public class MasterSquirrel extends Entity{
 	}
 	
 	//Prüfe ob übergebenes Entity Object ein Nachfahre ist
-	public boolean checkDescendant(Object object){
+	//Klassenmitgliedschaft ermitteln, über ID des erbenden Objekts ?
+	public boolean checkDescendant(int id){
 		boolean Descendant = false;
 		
 		
