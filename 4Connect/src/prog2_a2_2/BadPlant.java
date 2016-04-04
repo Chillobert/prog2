@@ -1,4 +1,4 @@
-package prog2_a2;
+package prog2_a2_2;
 
 public class BadPlant extends Entity{
 	public final static int energy = -100; 
