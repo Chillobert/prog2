@@ -33,6 +33,13 @@ public abstract class Entity{
         
         //Referenzcheck; true falls beide von gleicher Klasse abstammen
 
+        public boolean equals(Entity entity ){
+            return this.getClass().isInstance(entity);
+        }
+        
+        public void randMove(){
+            loc = new XY(loc.move(loc.randVect()));
+        }
     
         @Override
         public String toString(){

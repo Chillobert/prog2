@@ -11,7 +11,7 @@ public class Launcher {
                 fred.updateEnergy(-100);
 		BadBeast jack = new BadBeast(1, 2, 4);
                 System.out.println("X:"+fred.getPos()[0]);
-		fred.move(new int[]{1,5});
+		fred.randMove(new int[]{1,5});
                 karl.nextStep();
                 jack.nextStep();
 		System.out.println(jack.energy);
@@ -22,20 +22,30 @@ public class Launcher {
                 ent.add("BadPlant",0,1,2);
                 System.out.println(ent.outputString());*/
             
-                EntitySet ent = new EntitySet();
+                EntitySet entSet = new EntitySet();
 
             while(play){
-                ent.add("BadBeast", 0, 1, 2);
-                ent.add("GoodBeast" ,1,2,3);
-                ent.add("GoodPlant",2,3,4);
-                ent.add("BadPlant",3,4,5);
-                ent.add("GuidedMasterSquirrel",4,5,6);
-                ent.add("Wall", 5, 6, 7);
-                System.out.println(ent.toString());
-                ent.nextStepAll();
-                System.out.println(ent.toString());
-                ent.delete(3);
-                System.out.println(ent.toString());
+                entSet.add("BadBeast", 0,1,2);
+                entSet.add("GoodBeast" ,1,2,3);
+                entSet.add("GoodPlant",2,3,4);
+                entSet.add("BadPlant",3,4,5);
+                entSet.add("GuidedMasterSquirrel",4,3,4);
+                entSet.add("Wall", 5, 6, 7);
+                /*GuidedMasterSquirrel karl = new GuidedMasterSquirrel(6,3,4);
+                MiniSquirrel fritz = karl.createDescendant(6, 100, 3, 5);
+                BadBeast meixner = new BadBeast(7,4,6);
+                Wall Piechler = new Wall(8,5,6);
+                Wall fritzl = new Wall(9,6,7);
+                System.out.println(Piechler.equals(fritzl));
+                System.out.println(karl.checkDescendant(fritz));*/
+                System.out.println(entSet.toString());
+                entSet.nextStepAll();
+                System.out.println(entSet.toString());
+                //ent.delete(3);
+                for(int i = 0; i<=3;i++){
+                    entSet.nextStepAll();
+                System.out.println(entSet.toString());
+                }
                 play=false;
             }
 	}

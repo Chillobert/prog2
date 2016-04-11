@@ -12,6 +12,6 @@ public class GoodBeast extends Entity{
 
         @Override
         public void nextStep(){
-            loc.move(loc.randVect());
+            this.randMove();
         }
 }

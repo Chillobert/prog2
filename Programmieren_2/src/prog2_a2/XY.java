@@ -2,7 +2,7 @@ package prog2_a2;
 import java.util.Random;
 
 public final class XY {
-	private int[] loc;
+	private final int[] loc;
         
         public XY(int[]loc){
             this.loc = loc;

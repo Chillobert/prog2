@@ -10,7 +10,7 @@ public final static int energy = -150;
         
 @Override
         public void nextStep(){
-            loc.move(loc.randVect());
+            this.randMove();
         }
 
 

@@ -9,7 +9,8 @@ public class EntitySet {
     int[] delArray = new int[50];
     int idColl=0;
     
-    public EntitySet(){      
+    public EntitySet(){   
+        Arrays.fill(delArray, ' ');
     }
     
     public void add(String entityTyp,int id, int x, int y){
@@ -75,10 +76,10 @@ public class EntitySet {
         Arrays.fill(delArray, ' ');
     }
 
-    private void checkCollision(int ArrayPos){
+    private void checkCollision(int arrayPos){
         for(int i=0;entArray[i]!=null;i++){
-            if(entArray[ArrayPos].loc.getPos()==entArray[i].loc.getPos()){
-                mortalCombat(ArrayPos,i);
+            if((entArray[arrayPos].loc.getX()==entArray[i].loc.getX()&(entArray[arrayPos].loc.getY()==entArray[i].loc.getY()))){
+                mortalCombat(arrayPos,i);
                 return;
             }
         }
@@ -91,17 +92,16 @@ public class EntitySet {
     }
     
     //equals methode(mit instanceof)?
-    private void mortalCombat(int ArrayPos,int CollPos){
-    	Arrays.fill(delArray, ' ');
-    	if(isInstance(entArray[ArrayPos],PlayerEntity.class)){
-    		if(isInstance(entArray[CollPos], GoodPlant.class)){
-    			entArray[ArrayPos].updateEnergy(entArray[CollPos].getEnergy());
-    			entArray[CollPos].updateEnergy(0); //Energie auf 0 setzen
+    private void mortalCombat(int arrayPos,int collPos){
+    	if(isInstance(entArray[arrayPos],PlayerEntity.class)){
+    		if(isInstance(entArray[collPos], GoodPlant.class)){
+    			entArray[arrayPos].updateEnergy(entArray[collPos].getEnergy());
+    			entArray[collPos].updateEnergy(entArray[collPos].getEnergy()); //Energie auf 0 setzen
     			
     			for(int i = 0; i < delArray.length; i++){ //- Id an CollPos wird in delArray gespeichert
     				if(delArray[i] == ' '){
-    					delArray[i] = entArray[CollPos].getId(); //-
-    					
+    					delArray[i] = entArray[collPos].getId(); //-
+    					return;
     				}
     			}
     		}
