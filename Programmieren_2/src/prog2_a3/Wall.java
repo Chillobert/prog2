@@ -1,5 +1,6 @@
 package prog2_a3;
 
+
 public class Wall extends Entity{
 
 	public final static int energy = -10; 	

@@ -1,6 +1,5 @@
 package prog2_a3;
 
-import java.util.Random;
 
 public class GoodBeast extends Entity{
 
@@ -12,6 +11,6 @@ public class GoodBeast extends Entity{
 
         @Override
         public void nextStep(){
-            loc.move(loc.randVect());
+            this.randMove();
         }
 }

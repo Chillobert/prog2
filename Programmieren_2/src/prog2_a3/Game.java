@@ -22,7 +22,10 @@ public abstract class Game {
     abstract void processInput();
 	
 //Ver�nderung des Spielzustandes -> Vorbereitung n�chster Render Vorgang	
-    private void update() {}	
+    private void update() {
+    EntitySet entSet = new EntitySet();
+    entSet.nextStepAll();
+    }	
 	
 }
 

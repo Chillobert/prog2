@@ -2,19 +2,19 @@ package prog2_a3;
 import java.util.Random;
 
 public final class XY {
-	private int[] loc;
+	private final int[] loc;
         
         public XY(int[]loc){
             this.loc = loc;
         }
         
-	public int[] move(int[] Vector){
-            return new int[] {loc[0] + Vector[0],loc[1] + Vector[1]};
+	public XY move(int[] Vector){
+            return new XY(new int[]{loc[0] + Vector[0],loc[1] + Vector[1]});
 	}
 
-        public int[] randVect(){
+        public XY moveRandom(){
             Random r = new Random();
-            return new int[]{r.nextInt(3)-1,r.nextInt(3)-1};
+            return move(new int[]{r.nextInt(3)-1,r.nextInt(3)-1});
         }
         
         public int getX(){
@@ -28,4 +28,7 @@ public final class XY {
         public int[] getPos(){
             return loc;
         }
+        
+        // public XY add(XY xy) {
+        //    return new XY(x + xy.x, y + xy.y)
 }

@@ -1,5 +1,6 @@
 package prog2_a3;
 
+
 public abstract class Entity{
 	
 	private int id;
@@ -33,6 +34,13 @@ public abstract class Entity{
         
         //Referenzcheck; true falls beide von gleicher Klasse abstammen
 
+        public boolean checkInstance(Entity entity ){
+            return this.getClass().isInstance(entity);
+        }
+        
+        public void randMove(){
+            loc = loc.moveRandom();
+        }
     
         @Override
         public String toString(){

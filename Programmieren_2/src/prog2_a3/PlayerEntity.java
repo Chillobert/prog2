@@ -1,6 +1,7 @@
 package prog2_a3;
 
-public class PlayerEntity extends Entity{
+
+public abstract class PlayerEntity extends Entity{
     private int id;
     private int energy;
     
@@ -9,10 +10,6 @@ public class PlayerEntity extends Entity{
         this.id = id;
         this.energy = energy;
     };
-    @Override
-    public void nextStep() {
-
-    }
     
 
 }

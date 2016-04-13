@@ -1,4 +1,6 @@
 package prog2_a3;
+
+
 public class BadBeast extends Entity{
 	
 public final static int energy = -150;
@@ -10,7 +12,7 @@ public final static int energy = -150;
         
 @Override
         public void nextStep(){
-            loc.move(loc.randVect());
+            this.randMove();
         }
 
 

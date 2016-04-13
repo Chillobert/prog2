@@ -1,5 +1,6 @@
 package prog2_a3;
 
+
 public class BadPlant extends Entity{
 	public final static int energy = -100; 
 
